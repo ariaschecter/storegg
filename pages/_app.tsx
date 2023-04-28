@@ -1,3 +1,4 @@
+import React from "react";
 import "@/styles/utilities.css";
 import "@/styles/homepage.css";
 import "@/styles/detail.css";

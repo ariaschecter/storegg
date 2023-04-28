@@ -10,6 +10,8 @@ interface GameItemProps {
 
 export default function GameItem(props: GameItemProps) {
   const {title, category, thumbnail} = props;
+
+  const newThumbnail = `/img/${thumbnail}.png`;
   return (
     <div className="featured-game-card position-relative">
       <Link href="/detail" legacyBehavior>
@@ -17,7 +19,7 @@ export default function GameItem(props: GameItemProps) {
         <div className="blur-sharp">
           <Image
             className="thumbnail"
-            src={`/img/${thumbnail}.png`}
+            src={newThumbnail}
             width={205}
             height={270}
             alt=""
