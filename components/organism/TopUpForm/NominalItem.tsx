@@ -1,14 +1,15 @@
 import React from 'react';
+import { NumericFormat } from 'react-number-format';
 
 interface NominalItemProps {
-  _id: string,
-  coinQuantity: number,
-  coinName: string,
-  price: number,
+  _id: string;
+  coinQuantity: number;
+  coinName: string;
+  price: number;
 }
 
 export default function NominalItem(props: NominalItemProps) {
-  const {_id, coinQuantity, coinName, price} = props;
+  const { _id, coinQuantity, coinName, price } = props;
   return (
     <label
       className="col-lg-4 col-sm-6 ps-md-15 pe-md-15 pt-md-15 pb-md-15 pt-10 pb-10"
@@ -45,7 +46,15 @@ export default function NominalItem(props: NominalItemProps) {
             />
           </svg>
         </div>
-        <p className="text-lg color-palette-1 m-0">{price}</p>
+        <p className="text-lg color-palette-1 m-0">
+          <NumericFormat
+            value={price}
+            prefix="Rp. "
+            displayType="text"
+            thousandSeparator='.'
+            decimalSeparator=','
+          />
+        </p>
       </div>
     </label>
   );
